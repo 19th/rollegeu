@@ -1,0 +1,35 @@
+.container {
+    max-width: 768px;
+}
+
+
+
+
+.nav-link {
+    color: #6c757d;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+    color: #6c757d;
+}
+
+.news-card img {
+    object-fit: cover;
+    height: 240px;
+}
+
+.news-card .card-img-overlay {
+    background: linear-gradient(to bottom, transparent, transparent 70%, #222);
+    display: flex;
+    align-items: flex-end;
+}
+
+table td {
+    padding-left: 1rem !important; 
+}
+
+table {
+    border-radius: 12px;
+}
