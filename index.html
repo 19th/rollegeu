@@ -9,6 +9,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
+    <!-- Icons -->
     <link href="//aroup.com/rollegschool/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
     <link href="//aroup.com/rollegschool/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="http://aroup.com/rollegschool/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
@@ -28,19 +29,28 @@
             </a>
 
             <ul class="nav nav-underline col-12 col-md-auto justify-content-center">
-                <li class="nav-item"><a href="#jaunumi" class="nav-link" aria-current="page">Jaunumi</a></li>
-                <li class="nav-item"><a href="#pieraksts" class="nav-link">Pieraksts</a></li>
-                <li class="nav-item"><a href="#dati" class="nav-link">Mani dati</a></li>
-                <li class="nav-item"><a href="#maksa" class="nav-link">Maksa</a></li>
+                <li class="nav-item"><a href="#jaunumi" class="nav-link" aria-current="page"
+                        data-i18n="news">Jaunumi</a></li>
+                <li class="nav-item"><a href="#pieraksts" class="nav-link" data-i18n="registration">Pieraksts</a></li>
+                <li class="nav-item"><a href="#dati" class="nav-link" data-i18n="my_data">Mani dati</a></li>
+                <li class="nav-item"><a href="#maksa" class="nav-link" data-i18n="fee">Maksa</a></li>
+                <li class="nav-item"><a href="#grafiks" class="nav-link" data-i18n="schedule">Grafiks</a></li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Valoda
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" >
+                            🌐
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="?lang=lv">Latviešu</a></li>
-                            <li><a class="dropdown-item" href="?lang=en">English</a></li>
-                            <li><a class="dropdown-item" href="?lang=ru">Русский</a></li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="i18next.changeLanguage('lv'); return false;">Latviešu</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="i18next.changeLanguage('ru'); return false;">Русский</a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"
+                                    onclick="i18next.changeLanguage('en'); return false;">English</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -51,7 +61,7 @@
 
     <!-- Sekcija: Jaunumi -->
     <div class="container my-5" id="jaunumi">
-        <h2 class="mb-3">Jaunumi</h2>
+        <h2 class="mb-3" data-i18n="news">Jaunumi</h2>
         <div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
             <div class="col">
                 <a href="https://forms.gle/SCGeu1PjihZxbcbx7">
@@ -79,10 +89,9 @@
             </div>
         </div>
     </div>
-
     <!-- Sekcija: Pieraksts -->
     <div class="container my-5" id="pieraksts">
-        <h2 class="mb-3">Pieraksts</h2>
+        <h2 class="mb-3" data-i18n="registration">Pieraksts</h2>
 
         <table class="table border mb-3">
             <thead>
@@ -92,15 +101,16 @@
             <tbody>
                 <tr>
                     <td>17:15</td>
-                    <td>Pirmsskolēni</td>
+                    <td data-i18n="preschoolers">Pirmsskolēni</td>
                     <td class="text-center"><a class="btn btn-outline-secondary btn-sm" role="button" href="#"
-                            onclick="confirm('Pierakstīties uz 27.12.2024 17:15 grupā Pirmsskolēni?') && alert('Paldies par pierakstu!')">Pierakstīties</a>
+                            onclick="confirm('Pierakstīties uz 27.12.2024 17:15 grupā Pirmsskolēni?') && alert('Paldies par pierakstu!')"
+                            data-i18n="sign_up">Pierakstīties</a>
                     </td>
                 </tr>
                 <tr class="table-success">
                     <td>18:45</td>
-                    <td>Skolēni</td>
-                    <td class="text-center">✔️ Apmeklēts</td>
+                    <td data-i18n="students">Skolēni</td>
+                    <td class="text-center">✔️ <span data-i18n="attended">Apmeklēts</span></td>
                 </tr>
             </tbody>
         </table>
@@ -108,19 +118,17 @@
 
     <!-- Sekcija: Dati -->
     <div class="container my-5" id="dati">
-        <h2 class="mb-3">Mani dati</h2>
+        <h2 class="mb-3" data-i18n="my_data">Mani dati</h2>
 
         <!-- Tab switcher -->
         <ul class="nav nav-tabs mb-3">
             <li class="nav-item">
                 <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-dati" type="button" role="tab"
-                    href="#dati">Dati</a>
+                    href="#dati" data-i18n="data">Dati</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#dati" data-bs-toggle="tab" data-bs-target="#tab-grafiks">Grafiks</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#dati" data-bs-toggle="tab" data-bs-target="#tab-zurnals">Žurnāls</a>
+                <a class="nav-link" href="#dati" data-bs-toggle="tab" data-bs-target="#tab-zurnals"
+                    data-i18n="journal">Žurnāls</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -130,12 +138,12 @@
                     <div class="col">
                         <div class="card h-100">
                             <dl class="card-body row no-gutters">
-                                <h4 class="card-title">Persona</h4>
-                                <dt class="col-6">Vārds, uzvārds</dt>
+                                <h4 class="card-title" data-i18n="person">Persona</h4>
+                                <dt class="col-6" data-i18n="name_surname">Vārds, uzvārds</dt>
                                 <dd class="col-6 text-right">Amēlija Raikina</dd>
-                                <dt class="col-6">Gads</dt>
+                                <dt class="col-6" data-i18n="year">Gads</dt>
                                 <dd class="col-6 text-right">2019</dd>
-                                <dt class="col-6">Kontakttālrunis</dt>
+                                <dt class="col-6" data-i18n="contact_phone">Kontakttālrunis</dt>
                                 <dd class="col-6 text-right">21234567</dd>
                             </dl>
                         </div>
@@ -143,110 +151,14 @@
                     <div class="col">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h4 class="card-title">Abonements</h4>
-                                <p class="card-text">Līdz 25.01.25 <span class="badge bg-success">2/5</span></p>
+                                <h4 class="card-title" data-i18n="subscription">Abonements</h4>
+                                <p class="card-text" data-i18n="valid_until" data-i18n-options='{"date":"26.01.25"}'>
+                                    Līdz 25.01.25 <span class="badge bg-success">2/5</span></p>
                                 <a href="#" class="btn btn-outline-secondary btn-sm"
-                                    onclick="alert('Papildināt abonementu var samaksājot uz vietas.')">Papildināt</a>
+                                    onclick="alert('Papildināt abonementu var samaksājot uz vietas.')"
+                                    data-i18n="replenish">Papildināt</a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Tab grafiks -->
-            <div class="tab-pane fade" id="tab-grafiks" role="tabpanel">
-                <div class="row row-cols-1 row-cols-md-2">
-                    <div class="col">
-                        <table class="table border mb-3">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" class="table-light">Pirmdiena, otrdiena, trešdiena</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>17:15</td>
-                                    <td>Skolēni</td>
-                                </tr>
-                                <tr>
-                                    <td>18:45</td>
-                                    <td>Pirmsskolēni</td>
-                                </tr>
-                                <tr>
-                                    <td>20:00</td>
-                                    <td>Pieaugušie</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col">
-                        <table class="table border mb-3">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" class="table-light">Ceturtdiena, piektdiena</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>17:15</td>
-                                    <td>Skolēni</td>
-                                </tr>
-                                <tr>
-                                    <td>18:45</td>
-                                    <td>Pirmsskolēni</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col">
-                        <table class="table border mb-3">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" class="table-light">Sestdiena</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>11:00</td>
-                                    <td>Skolēni</td>
-                                </tr>
-                                <tr>
-                                    <td>12:30</td>
-                                    <td>Pirmsskolēni</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="col">
-                        <table class="table border mb-3">
-                            <thead>
-                                <tr>
-                                    <th colspan="2" class="table-light">Svētdiena</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>11:00</td>
-                                    <td>Pirmsskolēni</td>
-                                </tr>
-                                <tr>
-                                    <td>12:30</td>
-                                    <td>Skolēni</td>
-                                </tr>
-                                <tr>
-                                    <td>14:00</td>
-                                    <td>🛹 Skeitbordi</td>
-                                </tr>
-                                <tr>
-                                    <td>15:30</td>
-                                    <td>🛹 Skeitbordi (iesācēji)</td>
-                                </tr>
-                                <tr>
-                                    <td>17:00</td>
-                                    <td>Skolēni</td>
-                                </tr>
-                            </tbody>
-                        </table>
                     </div>
                 </div>
             </div>
@@ -255,9 +167,9 @@
                 <table class="table border mb-3">
                     <thead class="table-light">
                         <tr>
-                            <th>Datums</th>
-                            <th>Laiks</th>
-                            <th>Maksājumi</th>
+                            <th data-i18n="date">Datums</th>
+                            <th data-i18n="time">Laiks</th>
+                            <th data-i18n="payments">Maksājumi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -295,67 +207,330 @@
 
     <!-- Sekcija: Maksa -->
     <div class="container my-5" id="maksa">
-        <h2 class="mb-3">Nodarbību maksa</h2>
+        <h2 class="mb-3" data-i18n="class_fee">Nodarbību maksa</h2>
 
         <div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
             <div class="col">
                 <table class="table border mb-3">
                     <thead>
                         <tr>
-                            <th colspan="2" class="text-center table-light">Viena nodarbība</th>
+                            <th colspan="2" class="text-center table-light" data-i18n="single_class">Viena nodarbība
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Individuāla</td>
+                            <td data-i18n="individual">Individuāla</td>
                             <td>25 €</td>
                         </tr>
                         <tr>
-                            <td>Grupas</td>
+                            <td data-i18n="group">Grupas</td>
                             <td>15 €</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-
             <div class="col">
                 <table class="table border mb-3">
                     <thead>
                         <tr>
-                            <th colspan="3" class="text-center table-light">Abonements</th>
+                            <th colspan="3" class="text-center table-light" data-i18n="subscription">Abonements</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5 nodarbības</td>
+                            <td data-i18n="x_lessons" data-i18n-options='{"count": 5}'>5 nodarbības</td>
                             <td>65 €</td>
-                            <td>derīgs 60 dienas</td>
+                            <td data-i18n="valid_x_days" data-i18n-options='{"days": 60}'>derīgs 60 dienas</td>
                         </tr>
                         <tr>
-                            <td>7 nodarbības</td>
+                            <td data-i18n="x_lessons" data-i18n-options='{"count": 7}'>7 nodarbības</td>
                             <td>85 €</td>
-                            <td>derīgs 45 dienas</td>
+                            <td data-i18n="valid_x_days" data-i18n-options='{"days": 45}'>derīgs 45 dienas</td>
                         </tr>
                         <tr>
-                            <td>10 nodarbības</td>
+                            <td data-i18n="x_lessons" data-i18n-options='{"count": 10}'>10 nodarbības</td>
                             <td>110 €</td>
-                            <td>derīgs 30 dienas</td>
+                            <td data-i18n="valid_x_days" data-i18n-options='{"days": 30}'>derīgs 30 dienas</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="alert alert-warning" role="alert">
+        <!-- Alerts -->
+        <div class="alert alert-warning" role="alert" data-i18n="extend_subscription">
             Lai pagarināt abonement slimības deļ - nepieciešams uzrādīt ārsta izsniegto izziņu par slimību.
         </div>
-        <div class="alert alert-info" role="alert">
+        <div class="alert alert-info" role="alert" data-i18n="family_subscription">
             Abonementi attiecas uz visiem ģimenes locekļiem
         </div>
+
+        <!-- Sekcija grafiks -->
+        <div class="container my-5" id="grafiks">
+            <h2 class="mb-3" data-i18n="schedule">Grafiks</h2>
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col">
+                    <table class="table border mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="table-light" data-i18n="mon_tue_wed">Pirmdiena, otrdiena,
+                                    trešdiena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>17:15</td>
+                                <td data-i18n="students">Skolēni</td>
+                            </tr>
+                            <tr>
+                                <td>18:45</td>
+                                <td data-i18n="preschoolers">Pirmsskolēni</td>
+                            </tr>
+                            <tr>
+                                <td>20:00</td>
+                                <td data-i18n="adults">Pieaugušie</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table border mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="table-light" data-i18n="thu_fri">Ceturtdiena, piektdiena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>17:15</td>
+                                <td data-i18n="students">Skolēni</td>
+                            </tr>
+                            <tr>
+                                <td>18:45</td>
+                                <td data-i18n="preschoolers">Pirmsskolēni</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col">
+                    <table class="table border mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="table-light" data-i18n="sat">Sestdiena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11:00</td>
+                                <td data-i18n="students">Skolēni</td>
+                            </tr>
+                            <tr>
+                                <td>12:30</td>
+                                <td data-i18n="preschoolers">Pirmsskolēni</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col">
+                    <table class="table border mb-3">
+                        <thead>
+                            <tr>
+                                <th colspan="2" class="table-light" data-i18n="sun">Svētdiena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11:00</td>
+                                <td data-i18n="preschoolers">Pirmsskolēni</td>
+                            </tr>
+                            <tr>
+                                <td>12:30</td>
+                                <td data-i18n="students">Skolēni</td>
+                            </tr>
+                            <tr>
+                                <td>14:00</td>
+                                <td data-i18n="skateboards">🛹 Skeitbordi</td>
+                            </tr>
+                            <tr>
+                                <td>15:30</td>
+                                <td data-i18n="skateboards_beginners">🛹 Skeitbordi (iesācēji)</td>
+                            </tr>
+                            <tr>
+                                <td>17:00</td>
+                                <td data-i18n="students">Skolēni</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- This space is needed to allow navigation scroll to the middle of the page-->
+        <div class="container my-5" style="height: 120px;"></div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
+
+        <!-- Localization -->
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+        <script src="https://unpkg.com/i18next@24.2.0/dist/umd/i18next.min.js"></script>
+        <script
+            src="https://unpkg.com/i18next-browser-languagedetector@8.0.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+        <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
+        <script>
+            console.log('i18next initializing', i18next);
+            i18next.use(i18nextBrowserLanguageDetector).init({
+                fallbackLng: 'lv',
+                resources: {
+                    lv: {
+                        translation: {
+                            "news": "Jaunumi",
+                            "registration": "Pieraksts",
+                            "my_data": "Profils",
+                            "data": "Dati",
+                            "fee": "Maksa",
+                            "language": "Valoda",
+                            "latvian": "Latviešu",
+                            "russian": "Русский",
+                            "roller_disco": "Skrituļ-DISKO: 29.12",
+                            "new_year_classes": "Jaungada nodarbības: no 23.12",
+                            "person": "Persona",
+                            "name_surname": "Vārds, uzvārds",
+                            "year": "Gads",
+                            "contact_phone": "Kontakttālrunis",
+                            "subscription": "Abonements",
+                            "valid_until": "Līdz {{date}}",
+                            "replenish": "Papildināt",
+                            "class_fee": "Maksa",
+                            "single_class": "Viena nodarbība",
+                            "individual": "Individuāla",
+                            "group": "Grupas",
+                            "valid_x_days": "derīgs {{days}} dienas",
+                            "extend_subscription": "Lai pagarināt abonement slimības deļ - nepieciešams uzrādīt ārsta izsniegto izziņu par slimību.",
+                            "family_subscription": "Abonementi attiecas uz visiem ģimenes locekļiem",
+                            "preschoolers": "Pirmsskolēni",
+                            "students": "Skolēni",
+                            "adults": "Pieaugušie",
+                            "skateboards": "Skeitbordi",
+                            "skateboards_beginners": "Skeitbordi (iesācēji)",
+                            "attended": "Apmeklēts",
+                            "sign_up": "Pierakstīties",
+                            "date": "Datums",
+                            "time": "Laiks",
+                            "payments": "Maksājumi",
+                            "schedule": "Grafiks",
+                            "journal": "Žurnāls",
+                            "x_lessons": "{{count}} nodarbības",
+                            "mon_tue_wed": "Pirmdiena, otrdiena, trešdiena",
+                            "thu_fri": "Ceturtdiena, piektdiena",
+                            "sat": "Sestdiena",
+                            "sun": "Svētdiena"
+                        }
+                    },
+                    ru: {
+                        translation: {
+                            "news": "Новости",
+                            "registration": "Регистрация",
+                            "my_data": "Профиль",
+                            "data": "Данные",
+                            "fee": "Плата",
+                            "language": "Язык",
+                            "latvian": "Латышский",
+                            "russian": "Русский",
+                            "roller_disco": "Роллер-ДИСКО: 29.12",
+                            "new_year_classes": "Новогодние занятия: с 23.12",
+                            "person": "Персона",
+                            "name_surname": "Имя, Фамилия",
+                            "year": "Год",
+                            "contact_phone": "Контактный телефон",
+                            "subscription": "Абонемент",
+                            "valid_until": "До {{date}}",
+                            "replenish": "Пополнить",
+                            "class_fee": "Стоимость занятий",
+                            "single_class": "Одно занятие",
+                            "individual": "Индивидуальное",
+                            "group": "Групповое",
+                            "valid_x_days": "действителен {{days}} дней",
+                            "extend_subscription": "Для продления абонемента по болезни необходимо предоставить справку от врача.",
+                            "family_subscription": "Абонементы распространяются на всех членов семьи",
+                            "preschoolers": "Дошкольники",
+                            "students": "Школьники",
+                            "adults": "Взрослые",
+                            "skateboards": "Скейтборды",
+                            "skateboards_beginners": "Скейтборды (начинающие)",
+                            "attended": "Посещено",
+                            "sign_up": "Записаться",
+                            "date": "Дата",
+                            "time": "Время",
+                            "payments": "Платежи",
+                            "schedule": "Расписание",
+                            "journal": "Журнал",
+                            "x_lessons": "{{count}} занятий",
+                            "mon_tue_wed": "Понедельник, вторник, среда",
+                            "thu_fri": "Четверг, пятница",
+                            "sat": "Суббота",
+                            "sun": "Воскресенье"
+                        }
+                    },
+                    en: {
+                        translation: {
+                            "news": "News",
+                            "registration": "Registration",
+                            "my_data": "Profile",
+                            "data": "Data",
+                            "fee": "Fee",
+                            "language": "Language",
+                            "latvian": "Latvian",
+                            "russian": "Russian",
+                            "roller_disco": "Roller-DISCO: 29.12",
+                            "new_year_classes": "New Year Classes: from 23.12",
+                            "person": "Person",
+                            "name_surname": "Name, Surname",
+                            "year": "Year",
+                            "contact_phone": "Contact Phone",
+                            "subscription": "Subscription",
+                            "valid_until": "Valid until {{date}}",
+                            "replenish": "Replenish",
+                            "class_fee": "Price",
+                            "single_class": "Single Class",
+                            "individual": "Individual",
+                            "group": "Group",
+                            "valid_x_days": "valid for {{days}} days",
+                            "extend_subscription": "To extend the subscription due to illness, a doctor's note is required.",
+                            "family_subscription": "Subscriptions apply to all family members",
+                            "preschoolers": "Preschoolers",
+                            "students": "Schoolers",
+                            "adults": "Adults",
+                            "skateboards": "Skateboards",
+                            "skateboards_beginners": "Skateboards (beginners)",
+                            "attended": "Attended",
+                            "sign_up": "Sign Up",
+                            "date": "Date",
+                            "time": "Time",
+                            "payments": "Payments",
+                            "schedule": "Schedule",
+                            "journal": "Journal",
+                            "x_lessons": "{{count}} lessons",
+                            "mon_tue_wed": "Monday, Tuesday, Wednesday",
+                            "thu_fri": "Thursday, Friday",
+                            "sat": "Saturday",
+                            "sun": "Sunday"
+                        }
+                    }
+                }
+            }, function (err, t) {
+                console.log('i18next initialized', err, i18next);
+                jqueryI18next.init(i18next, $, {
+                    useOptionsAttr: true,
+                });
+                $('body').localize();
+                i18next.on('languageChanged', () => $('body').localize());
+            });
+        </script>
+        <!-- Custom script -->
         <script src="main.js"></script>
 </body>
 
